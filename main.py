@@ -84,7 +84,7 @@ class Comment(db.Model):
     parent_post = relationship("BlogPost", back_populates="comments")
 
     text = db.Column(db.Text, nullable=False)
-# db.create_all()
+db.create_all()
 
 
 
@@ -180,7 +180,6 @@ def show_post(post_id):
 
 @app.route("/about")
 def about():
-    print(current_user.id)
     return render_template("about.html")
 
 
